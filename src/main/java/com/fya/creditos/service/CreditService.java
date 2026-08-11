@@ -11,6 +11,7 @@ import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
 
@@ -22,6 +23,7 @@ public class CreditService {
     private final CreditMapper creditMapper;
     private final ApplicationEventPublisher eventPublisher;
 
+    @Transactional
     public CreditResponse create(CreditRequest request) {
         Credit credit = creditMapper.toEntity(request);
         credit.setRegisteredAt(Instant.now());
