@@ -13,11 +13,15 @@ public class MailService {
 
     private final JavaMailSender mailSender;
 
+    @Value("${app.mail.sender}")
+    private String sender;
+
     @Value("${app.mail.notification-recipient}")
     private String notificationRecipient;
 
     public void sendCreditRegisteredNotification(CreditRegisteredEvent event) {
         SimpleMailMessage message = new SimpleMailMessage();
+        message.setFrom(sender);
         message.setTo(notificationRecipient);
         message.setSubject("New credit registered: " + event.customerName());
         message.setText("""
