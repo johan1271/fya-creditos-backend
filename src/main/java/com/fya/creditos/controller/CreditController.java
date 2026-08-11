@@ -5,6 +5,7 @@ import com.fya.creditos.dto.CreditResponse;
 import com.fya.creditos.service.CreditService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -30,7 +31,7 @@ public class CreditController {
     }
 
     @GetMapping
-    public Page<CreditResponse> search(@RequestParam(required = false) String q, Pageable pageable) {
+    public Page<CreditResponse> search(@RequestParam(required = false) String q, @ParameterObject Pageable pageable) {
         return creditService.search(q, pageable);
     }
 }
