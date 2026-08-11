@@ -3,6 +3,7 @@ package com.fya.creditos.exception;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -39,6 +40,17 @@ public class GlobalExceptionHandler {
                 List.of()
         );
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(body);
+    }
+
+    @ExceptionHandler(BadCredentialsException.class)
+    public ResponseEntity<ErrorResponse> handleBadCredentials(BadCredentialsException ex) {
+        ErrorResponse body = new ErrorResponse(
+                LocalDateTime.now(),
+                HttpStatus.UNAUTHORIZED.value(),
+                ex.getMessage(),
+                List.of()
+        );
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(body);
     }
 
     @ExceptionHandler(Exception.class)
