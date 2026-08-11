@@ -2,11 +2,11 @@ package com.fya.creditos.controller;
 
 import com.fya.creditos.dto.CreditRequest;
 import com.fya.creditos.dto.CreditResponse;
+import com.fya.creditos.dto.PagedResponse;
 import com.fya.creditos.service.CreditService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springdoc.core.annotations.ParameterObject;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,7 +31,7 @@ public class CreditController {
     }
 
     @GetMapping
-    public Page<CreditResponse> search(@RequestParam(required = false) String q, @ParameterObject Pageable pageable) {
-        return creditService.search(q, pageable);
+    public PagedResponse<CreditResponse> search(@RequestParam(required = false) String q, @ParameterObject Pageable pageable) {
+        return PagedResponse.from(creditService.search(q, pageable));
     }
 }
