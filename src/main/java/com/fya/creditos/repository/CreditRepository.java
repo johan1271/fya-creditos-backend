@@ -11,8 +11,7 @@ public interface CreditRepository extends JpaRepository<Credit, Long> {
 
     @Query("""
         SELECT c FROM Credit c
-        WHERE :q IS NULL
-           OR LOWER(c.customerName) LIKE LOWER(CONCAT('%', :q, '%'))
+        WHERE LOWER(c.customerName) LIKE LOWER(CONCAT('%', :q, '%'))
            OR LOWER(c.idNumber) LIKE LOWER(CONCAT('%', :q, '%'))
            OR LOWER(c.salesAgent) LIKE LOWER(CONCAT('%', :q, '%'))
         """)

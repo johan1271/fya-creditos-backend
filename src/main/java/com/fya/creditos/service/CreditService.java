@@ -28,6 +28,7 @@ public class CreditService {
     }
 
     public Page<CreditResponse> search(String q, Pageable pageable) {
-        return creditRepository.search(q, pageable).map(creditMapper::toResponse);
+        String term = (q == null) ? "" : q;
+        return creditRepository.search(term, pageable).map(creditMapper::toResponse);
     }
 }
