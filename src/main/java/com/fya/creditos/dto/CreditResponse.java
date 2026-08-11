@@ -1,7 +1,7 @@
 package com.fya.creditos.dto;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 public record CreditResponse(
         Long id,
@@ -11,6 +11,6 @@ public record CreditResponse(
         BigDecimal interestRate,
         Integer termMonths,
         String salesAgent,
-        LocalDateTime registeredAt
+        Instant registeredAt
 ) {
 }

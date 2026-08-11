@@ -10,7 +10,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 @Service
 @RequiredArgsConstructor
@@ -21,7 +21,7 @@ public class CreditService {
 
     public CreditResponse create(CreditRequest request) {
         Credit credit = creditMapper.toEntity(request);
-        credit.setRegisteredAt(LocalDateTime.now());
+        credit.setRegisteredAt(Instant.now());
 
         Credit saved = creditRepository.save(credit);
         return creditMapper.toResponse(saved);

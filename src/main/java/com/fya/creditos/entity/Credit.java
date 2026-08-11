@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 @Entity
 @Table(name = "credits")
@@ -47,5 +47,5 @@ public class Credit {
     private String salesAgent;
 
     @Column(name = "registered_at", nullable = false)
-    private LocalDateTime registeredAt;
+    private Instant registeredAt;
 }

@@ -1,0 +1,1 @@
+ALTER TABLE credits ALTER COLUMN registered_at TYPE TIMESTAMPTZ;
