@@ -16,7 +16,7 @@ public record CreditRequest(
         String customerName,
 
         @NotBlank(message = "idNumber must not be blank")
-        @Size(max = 20, message = "idNumber must be at most 20 characters")
+        @Size(min = 6, max = 20, message = "idNumber must be between 6 and 20 characters")
         String idNumber,
 
         @NotNull(message = "creditAmount must not be null")
