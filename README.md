@@ -8,7 +8,7 @@ Backend for Fya Social Capital's credit registration/lookup technical test: a RE
 - **Swagger UI:** https://fya-creditos-backend.onrender.com/swagger-ui.html
 - **Frontend repo:** https://github.com/johan1271/fya-creditos-frontend
 - **Live web app:** https://fya-creditos-frontend.netlify.app
-- **Signed Android APK:** https://github.com/johan1271/fya-creditos-frontend/releases/tag/v1.1.0
+- **Signed Android APK:** https://github.com/johan1271/fya-creditos-frontend/releases/tag/v1.2.0
 
 ## Stack
 
@@ -108,7 +108,7 @@ Backend para la prueba técnica de registro/consulta de créditos de Fya Social 
 - **Swagger UI:** https://fya-creditos-backend.onrender.com/swagger-ui.html
 - **Repo del frontend:** https://github.com/johan1271/fya-creditos-frontend
 - **App web en vivo:** https://fya-creditos-frontend.netlify.app
-- **APK firmado de Android:** https://github.com/johan1271/fya-creditos-frontend/releases/tag/v1.1.0
+- **APK firmado de Android:** https://github.com/johan1271/fya-creditos-frontend/releases/tag/v1.2.0
 
 ## Stack
 
