@@ -23,14 +23,14 @@ public class MailService {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom(sender);
         message.setTo(notificationRecipient);
-        message.setSubject("New credit registered: " + event.customerName());
+        message.setSubject("Nuevo crédito registrado: " + event.customerName());
         message.setText("""
-                A new credit has been registered.
+                Se ha registrado un nuevo crédito.
 
-                Customer: %s
-                Amount: %s
-                Sales agent: %s
-                Registered at: %s
+                Cliente: %s
+                Monto: %s
+                Asesor de ventas: %s
+                Fecha de registro: %s
                 """.formatted(event.customerName(), event.creditAmount(), event.salesAgent(), event.registeredAt()));
 
         mailSender.send(message);
