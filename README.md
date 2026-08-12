@@ -7,7 +7,8 @@ Backend for Fya Social Capital's credit registration/lookup technical test: a RE
 - **Live API:** https://fya-creditos-backend.onrender.com
 - **Swagger UI:** https://fya-creditos-backend.onrender.com/swagger-ui.html
 - **Frontend repo:** https://github.com/johan1271/fya-creditos-frontend
-- **Signed Android APK:** https://github.com/johan1271/fya-creditos-frontend/releases/tag/v1.0.0
+- **Live web app:** https://fya-creditos-frontend.netlify.app
+- **Signed Android APK:** https://github.com/johan1271/fya-creditos-frontend/releases/tag/v1.1.0
 
 ## Stack
 
@@ -45,7 +46,7 @@ Flyway runs all migrations automatically on startup — no manual schema setup n
 | `MAIL_SENDER` | Visible "From" address (may differ from `MAIL_USERNAME` with relay providers) |
 | `MAIL_NOTIFICATION_RECIPIENT` | Where the registration notification email is sent |
 | `JWT_SECRET` | Secret used to sign JWTs (falls back to a dev-only default if unset — don't rely on that in production) |
-| `CORS_ALLOWED_ORIGINS` | Comma-separated allowed origins; defaults cover `ionic serve` and the Capacitor Android WebView |
+| `CORS_ALLOWED_ORIGINS` | Comma-separated allowed origins; defaults cover `ionic serve`, the Capacitor Android WebView, and the Netlify web deploy |
 | `PORT` | Optional, defaults to `8080` (Render sets this itself) |
 
 ## Database
@@ -106,7 +107,8 @@ Backend para la prueba técnica de registro/consulta de créditos de Fya Social 
 - **API en vivo:** https://fya-creditos-backend.onrender.com
 - **Swagger UI:** https://fya-creditos-backend.onrender.com/swagger-ui.html
 - **Repo del frontend:** https://github.com/johan1271/fya-creditos-frontend
-- **APK firmado de Android:** https://github.com/johan1271/fya-creditos-frontend/releases/tag/v1.0.0
+- **App web en vivo:** https://fya-creditos-frontend.netlify.app
+- **APK firmado de Android:** https://github.com/johan1271/fya-creditos-frontend/releases/tag/v1.1.0
 
 ## Stack
 
@@ -144,7 +146,7 @@ Flyway corre todas las migraciones automáticamente al iniciar — no hace falta
 | `MAIL_SENDER` | Dirección "De" visible (puede diferir de `MAIL_USERNAME` con proveedores de relay) |
 | `MAIL_NOTIFICATION_RECIPIENT` | A dónde se envía el correo de notificación de registro |
 | `JWT_SECRET` | Secreto usado para firmar los JWT (usa un valor de desarrollo por defecto si no se define — no confiar en eso en producción) |
-| `CORS_ALLOWED_ORIGINS` | Lista de orígenes permitidos separados por coma; el valor por defecto cubre `ionic serve` y el WebView de Capacitor Android |
+| `CORS_ALLOWED_ORIGINS` | Lista de orígenes permitidos separados por coma; el valor por defecto cubre `ionic serve`, el WebView de Capacitor Android, y el deploy web en Netlify |
 | `PORT` | Opcional, por defecto `8080` (Render lo define solo) |
 
 ## Base de datos
